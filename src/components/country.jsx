@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Country = ({country}) => {
+const Country = ({country, handelVisitedCountries}) => {
     console.log(country);
     const {name, flags, population, region, timezones } = country;
 
@@ -17,6 +17,8 @@ const Country = ({country}) => {
            <p> population: {population} </p>
            <h5> region: {region} </h5>
            <p> TimeZones: {timezones[0]} </p> 
+           <br />
+           <button onClick={() => handelVisitedCountries(country)}>mark visited</button>
            <button onClick={handelVisited}>{visited? 'visited' : 'going'}</button>
            { visited ? 'i want to visited' : 'i want to going'}
            
